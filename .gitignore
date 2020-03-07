@@ -1,0 +1,9 @@
+*~
+.#*
+*.fasl
+*.abcl
+*.lx64fsl
+.cache/
+*.log
+*.log.*
+cl-ledger.config
