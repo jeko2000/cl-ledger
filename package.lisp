@@ -1,4 +1,4 @@
 ;;;; package.lisp
 
-(defpackage #:cl-ledger
+(defpackage #:zledger
   (:use #:cl))

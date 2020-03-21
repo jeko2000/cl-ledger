@@ -1,6 +1,6 @@
-;;;; cl-ledger.asd
+;;;; zledger.asd
 
-(asdf:defsystem #:cl-ledger
+(asdf:defsystem #:zledger
   :description "TODO"
   :author "jeko <jeko2000@yandex.com"
   :license  "MIT"

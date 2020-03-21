@@ -6,4 +6,4 @@
 .cache/
 *.log
 *.log.*
-cl-ledger.config
+zledger.config

@@ -1,10 +1,10 @@
-(in-package #:cl-ledger)
+(in-package #:zledger)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (defparameter *compile-declaration*
     '(optimize (speed 0) (safety 3) (debug 3))))
 
-(defvar *logger-daily-file* "cl-ledger.log"
+(defvar *logger-daily-file* "zledger.log"
   "The name of the file where logs should be saved.")
 (defvar *mailer-host* nil
   "The SMTP host name.")

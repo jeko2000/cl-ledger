@@ -1,6 +1,6 @@
 ;;;; Logger component definition
 
-(in-package #:cl-ledger)
+(in-package #:zledger)
 (declaim #.*compile-declaration*)
 
 (defcomponent logger ()

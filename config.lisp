@@ -1,9 +1,9 @@
 ;;;; Configuration component definition
 
-(in-package #:cl-ledger)
+(in-package #:zledger)
 
 (declaim #.*compile-declaration*)
 
 (defcomponent config ())
 
-(load "cl-ledger.config")
+;;(load "zledger.config")
