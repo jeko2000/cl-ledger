@@ -10,12 +10,18 @@
                :log4cl
                :cl-smtp
                :uiop
-               :trivial-types)
+               :trivial-types
+               :hunchentoot
+               :cl-ppcre
+               :st-json)
   :components ((:module "src"
                 :serial t
                 :components
                 ((:file "package")
                  (:file "specials")
+                 (:file "util")
                  (:file "components")
                  (:file "config")
-                 (:file "logger")))))
+                 (:file "logger")
+                 (:file "http-util")
+                 (:file "http")))))
