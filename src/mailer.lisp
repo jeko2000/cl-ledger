@@ -29,7 +29,6 @@
     (log:info "Sending email to ~s with subject ~a and content length ~d"
               to-email subject (length content))
     (let ((params (list *mailer-host* *mailer-from* to-email subject content
-                        :ssl :starttls :port *mailer-port*
-                        )))
+                        :ssl :starttls :port *mailer-port*)))
       (log:info "Attempting to send email with params: ~s" (remove-if #'listp params))
       (apply #'cl-smtp:send-email params))))

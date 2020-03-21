@@ -11,8 +11,11 @@
                :cl-smtp
                :uiop
                :trivial-types)
-  :components ((:file "package")
-               (:file "specials")
-               (:file "components")
-               (:file "config")
-               (:file "logger")))
+  :components ((:module "src"
+                :serial t
+                :components
+                ((:file "package")
+                 (:file "specials")
+                 (:file "components")
+                 (:file "config")
+                 (:file "logger")))))
