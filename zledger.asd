@@ -24,4 +24,5 @@
                  (:file "config")
                  (:file "logger")
                  (:file "http-util")
-                 (:file "http")))))
+                 (:file "http")
+                 (:file "model")))))
