@@ -2,7 +2,7 @@
 
 (declaim #.*compile-declaration*)
 
-(alexandria:define-constant +lifecycle-states+ '(:started :starting :stopped)
+(define-constant +lifecycle-states+ '(:started :starting :stopped)
   :test #'equal
   :documentation "allowed lifecycle states")
 

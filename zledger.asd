@@ -13,7 +13,8 @@
                :trivial-types
                :hunchentoot
                :cl-ppcre
-               :st-json)
+               :st-json
+               :cl-arrows)
   :components ((:module "src"
                 :serial t
                 :components
