@@ -31,4 +31,13 @@
                  (:file "logger" :depends-on ("component"))
                  (:file "mailer" :depends-on ("component"))
                  (:file "http" :depends-on ("component" "http-util"))
-                 (:file "model" :depends-on ("component"))))))
+                 (:file "model" :depends-on ("component")))))
+  :in-order-to ((test-op (test-op "zledger/test"))))
+
+(defsystem "zledger/test"
+  :depends-on ("zledger" "fiveam")
+  :components ((:module "t"
+                :components
+                ((:file "test-suite")
+                 (:file "util-test" :depends-on ("test-suite")))))
+  :perform (test-op (o c) (symbol-call :zledger/test '#:run-tests!)))
