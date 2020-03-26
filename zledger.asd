@@ -1,29 +1,34 @@
 ;;;; zledger.asd
 
-(asdf:defsystem #:zledger
-  :description "TODO"
-  :author "jeko <jeko2000@yandex.com"
+(defsystem "zledger"
   :license  "MIT"
-  :version "0.0.1"
+  :description "Web-based personal accounting application"
+  :author "jeko2000 (Johnny Ruiz)"
+  :maintainer "jeko2000 (Johnny Ruiz)"
+  :mailto "jeko2000@yandex.com"
+  :source-control (:git "git@github.com:jeko2000/zledger.git")
+  :version (:read-file-form "version.lisp-expr")
+  :encoding :utf-8
   :serial t
-  :depends-on (:alexandria
-               :log4cl
-               :cl-smtp
-               :uiop
-               :trivial-types
-               :hunchentoot
-               :cl-ppcre
-               :st-json
-               :cl-arrows)
+  :depends-on ("alexandria"
+               "log4cl"
+               "cl-smtp"
+               "uiop"
+               "trivial-types"
+               "hunchentoot"
+               "cl-ppcre"
+               "st-json"
+               "cl-arrows")
   :components ((:module "src"
                 :serial t
                 :components
                 ((:file "package")
-                 (:file "specials")
-                 (:file "util")
-                 (:file "components")
-                 (:file "config")
-                 (:file "logger")
-                 (:file "http-util")
-                 (:file "http")
-                 (:file "model")))))
+                 (:file "specials" :depends-on ("package"))
+                 (:file "util" :depends-on ("specials"))
+                 (:file "http-util" :depends-on ("util"))
+                 (:file "component" :depends-on ("util"))
+                 (:file "config" :depends-on ("component"))
+                 (:file "logger" :depends-on ("component"))
+                 (:file "mailer" :depends-on ("component"))
+                 (:file "http" :depends-on ("component" "http-util"))
+                 (:file "model" :depends-on ("component"))))))
