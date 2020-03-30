@@ -31,7 +31,8 @@
                  (:file "logger" :depends-on ("component"))
                  (:file "mailer" :depends-on ("component"))
                  (:file "http" :depends-on ("component" "http-util"))
-                 (:file "model" :depends-on ("component")))))
+                 (:file "model" :depends-on ("component"))
+                 (:file "app" :depends-on ("model" "http")))))
   :in-order-to ((test-op (test-op "zledger/test"))))
 
 (defsystem "zledger/test"

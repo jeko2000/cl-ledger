@@ -31,7 +31,7 @@
     (when path
       (let (groups)
         (cl-ppcre:do-register-groups (group) (token-regex path)
-          (push (string->keyword group) groups))
+          (push (make-keyword group) groups))
         (values (nreverse groups)
                 (cl-ppcre:regex-replace-all token-regex path replacement))))))
 
@@ -106,5 +106,5 @@
 
 (defmacro with-path-parameters (params &body body)
   `(let ,(loop for param in params
-               collect `(,param (hunchentoot:aux-request-value ,(string->keyword param))))
+               collect `(,param (hunchentoot:aux-request-value ,(make-keyword param))))
      ,@body))

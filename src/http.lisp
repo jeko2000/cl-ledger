@@ -2,13 +2,17 @@
 
 (declaim #.*compile-declaration*)
 
-(defvar *http-server* (make-http-server))
+(defvar *http-server* nil)
 
-(defcomponent http ()
+(defcomponent http (logger config)
   (:start
+   (setf *http-server* (make-http-server))
+   (log:info "HTTP server listening to ~a:~d"
+             (hunchentoot:acceptor-address *http-server*)
+             (hunchentoot:acceptor-port *http-server*))
    (hunchentoot:start *http-server*))
   (:stop
-   (hunchentoot:stop *http-server*)))
+   (hunchentoot:stop *http-server* :soft t)))
 
 (defhandler healthcheck (:method :get :path "/ping")
   (with-json-response (200)

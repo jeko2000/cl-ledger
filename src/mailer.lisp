@@ -3,7 +3,7 @@
 (in-package #:zledger)
 (declaim #.*compile-declaration*)
 
-(defcomponent mailer (logger))
+(defcomponent mailer (logger config))
 
 (defclass mail-spec ()
   ((to-name

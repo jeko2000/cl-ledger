@@ -4,7 +4,7 @@
 
 (declaim #.*compile-declaration*)
 
-(defcomponent logger ()
+(defcomponent logger (config)
   (:start
    (when *logger-daily-file*
-     (log:config :daily *daily-logger-file*))))
+     (log:config :daily *logger-daily-file*))))

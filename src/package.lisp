@@ -3,4 +3,5 @@
 (defpackage #:zledger
   (:use #:cl #:cl-arrows #:alexandria)
   (:export
-   #:string->keyword))
+   #:start-app!
+   #:stop-app!))
