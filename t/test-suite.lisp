@@ -1,5 +1,5 @@
 (defpackage #:zledger/test
-  (:use #:cl #:zledger :fiveam))
+  (:use #:cl #:zledger #:fiveam #:alexandria))
 
 (in-package #:zledger/test)
 
